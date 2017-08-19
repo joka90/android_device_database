@@ -2034,6 +2034,17 @@ static supported_device supported_devices[] = {
     .remap_pfn_range_address = 0xc011358c,
     .ptmx_fops_address = 0xc1067b48,
   },
+  {
+    .device_id = DEVICE_MY15ADA_0C_091_01_1123,
+    .device = "MY15ADA",
+    .build_id = "0C.091.01.1123",
+
+    .prepare_kernel_cred_address = 0xc0086014,
+    .commit_creds_address = 0xc008638c,
+    .remap_pfn_range_address = 0xc00eabb0,
+    .vmalloc_exec_address = 0xc00f6808,
+    .ptmx_fops_address = 0xc08c80c4,//extracted from recovery image, addresses in dumped kallsyms from running kernel(boot) seams to match the dissassebled ones, have not found boot.img yet..
+  }
 };
 
 static int n_supported_devices = sizeof(supported_devices) / sizeof(supported_devices[0]);
